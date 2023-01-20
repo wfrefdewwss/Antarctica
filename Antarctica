@@ -1,0 +1,59 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("universal hub", "Ocean")
+
+---- Main
+local Main = Window:NewTab("Main")
+local Main = Main:NewSection("Main")
+
+Main:NewKeybind("Toggls", "it Toggls", Enum.KeyCode.LeftControl, function()
+	Library:ToggleUI()
+end)
+
+Main:NewButton("Equip all", "bruh", function()
+	local A_1 = "Equip"
+local A_2 = game:GetService("Workspace")["Flare_Box"].Attachment.Flare
+local Event = game:GetService("ReplicatedStorage")["Tools_Main"]
+Event:FireServer(A_1, A_2)
+local A_1 = "BackpackNormal"
+local A_2 = game:GetService("Players").LocalPlayer
+local Event = game:GetService("ReplicatedStorage")["Item_Distributor"]
+Event:FireServer(A_1, A_2)
+local A_1 = "OutfitNormal"
+local A_2 = game:GetService("Players").LocalPlayer
+local Event = game:GetService("ReplicatedStorage")["Item_Distributor"]
+Event:FireServer(A_1, A_2)
+local A_1 = "HelmetNormal"
+local A_2 = game:GetService("Players").LocalPlayer
+local Event = game:GetService("ReplicatedStorage")["Item_Distributor"]
+Event:FireServer(A_1, A_2)
+end)
+
+
+Main:NewButton("inf coins", "bruh", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/wfrefdewwss/inf-con/main/inf%20co"))()	
+end)
+
+
+Main:NewButton("skip the parkour", "bruh", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3263.25244, -151.873337, -335.97583, -0.997326255, 6.64691768e-08, -0.0730777681, 6.21857765e-08, 1, 6.08894837e-08, 0.0730777681, 5.61822837e-08, -0.997326255)
+end)
+
+Main:NewButton("tp to the end", "bruh", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3761.06152, 1351.88123, -182.271484, 0.716996193, -4.50318147e-08, 0.697077096, 4.836334e-08, 1, 1.48555781e-08, -0.697077096, 2.30615829e-08, 0.716996193)	
+end)
+
+
+
+
+
+
+
+
+---- Player
+local Player = Window:NewTab("Player")
+local Player = Player:NewSection("Player")
+
+Player:NewSlider("WalkSpeed", "bruh", 400, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
